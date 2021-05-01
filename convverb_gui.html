@@ -1,0 +1,100 @@
+<title>Spectral Sounds: Hear the Sound of Spaces</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://spectralsounds.org/wp-content/uploads/custom-css-js/convtest.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  
+<h1 style="text-align:center">
+Spectral Sounds: Hear the Sound of Spaces
+        </h1>  
+        
+            <div class="container-fluid main">
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                Step 1: Pick an Input Sound
+                            </div>
+                            <div class="card_form">
+                                <div class="form-group">
+                                    <select id="change_source" class="custom-select my-1 mr-sm-2">
+                                                               
+                                        <option value="2021/05/flamenco.mp3">Flamenco Guitar</option>
+<option value="2021/05/soprano.mp3">Soprano Voice</option>
+<option value="2021/05/flute.mp3">Flute</option>
+<option value="2021/05/clarinet.mp3">Clarinet</option>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Step 2: Pick a Space to Play Sound In
+                                <div class="custom-control custom-switch float-right">
+                                    <!--<input type="checkbox" class="custom-control-input" id="change_convoluer_state" checked="">
+                                    <label class="custom-control-label" for="change_convoluer_state" id="customSwitch"></label>-->
+                                </div>
+                            </div>
+                            <div class="card_form">
+                                <div class="form-group">
+                                    <select id="change_convoluer" class="custom-select my-1 mr-sm-2">
+                                                                              
+                                        <option value="2021/03/lodge.wav" selected="">Room</option>
+                                        <option value="2021/03/silo.wav">Silo</option>
+<option value="2021/05/cathedral.wav">Cathedral</option>
+                                       
+                                    </select>
+                                </div>
+                                
+                                <button id="ir_play_button" type="button" class="btn btn-secondary btn-block"><i class="fas fa-play"></i> Play Just the Space!</button>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Step 3: Play Sound in the Space
+                            </div>
+                            <div class="card_form">
+                                <button id="play_button" type="button" class="btn btn-primary btn-block"><i class="fas fa-play"></i> Play the Sound in the Space!</button>
+                                <button id="stop_button" type="button" class="btn btn-primary btn-block hidden" style="margin-top: 0"><i class="fas fa-stop"></i> Stop</button>
+<label for="drywet_ui">How Much the Space Alters the Sound (Dry/Wet)</label>
+                                    <input type="range" class="custom-range" value="1" min="0" max="1" step="0.05" id="drywet_ui">
+                            </div>
+                                    
+
+                        </div>
+                    </div>
+<!--
+                    <div class="col-9">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <span class="nav-link active" href="#">Diagram</span>
+                            </li>
+                        </ul>
+                        <div style="padding-top:20px">
+                            Audio Convolution using the Web Audio API. Select the sound source and the Impulse response of the reverb processor.
+                        </div>
+                        <div class="text-center">
+                            <svg width="550" height="480">
+                                <path d="M150,100 h200 a20,20 0 0 1 20,20 v200 a20,20 0 0 1 -20,20 h-200 a20,20 0 0 1 -20,-20 v-200 a20,20 0 0 1 20,-20 z" fill="#00000008" stroke="#00000020" stroke-width="1"></path>
+                                <text x="180" y="225" fill="#000000b3">Convolution Reverb</text>
+                                <text x="0" y="225" fill="#000000b3">Input</text>
+                                <text x="460" y="225" fill="#000000b3">Output</text>
+                                <defs>
+                                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto" markerUnits="strokeWidth">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#00000020"></path>
+                                    </marker>
+                                </defs>
+                                <line x1="50" y1="220" x2="120" y2="220" stroke="#00000020" stroke-width="1" marker-end="url(#arrow)"></line>
+                                <line x1="370" y1="220" x2="440" y2="220" stroke="#00000020" stroke-width="1" marker-end="url(#arrow)"></line>
+                            </svg>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
